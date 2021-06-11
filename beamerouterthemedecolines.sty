@@ -43,6 +43,8 @@
 \setbeamercolor*{linemid}{parent=palette secondary}
 \setbeamercolor*{linebottom}{parent=palette tertiary}
 \setbeamercolor*{page header}{parent=titlelike}
+\definecolor{darkgray}{RGB}{134,136,138}
+\setbeamercolor*{page of pages}{fg=darkgray}
 
 % Lengths
 \newlength{\headerheight}
@@ -72,8 +74,9 @@
   \leavevmode%
   % Page number.
   \hbox{%
-  \begin{beamercolorbox}[wd=.2\paperwidth,ht=0ex,dp=0ex,center]{}%
-    \usebeamerfont{palette primary}\insertframenumber{} \beamer@decolines@pageofpages{} \inserttotalframenumber%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=0ex,dp=0ex,center]{page of pages}%
+    \usebeamerfont{palette primary}
+    \insertframenumber{} \beamer@decolines@pageofpages{} \inserttotalframenumber%
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.8\paperwidth,ht=0ex,dp=0ex]{}%
   \end{beamercolorbox}%
