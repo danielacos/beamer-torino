@@ -91,5 +91,9 @@
 	\setbeamercolor{block title}{bg=PHDblue,fg=white}}
 \ResetBlockTitle
 
+%----- EMPHASIS -----%
+\newcommand<>{\framedmath}[1]{%
+	\alt#2{\tikz[phd] \node[box] {\ensuremath{#1}};}{\ensuremath{#1}}}
+
 \mode
 <all>
