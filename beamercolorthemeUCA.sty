@@ -92,6 +92,8 @@
 \ResetBlockTitle
 
 %----- EMPHASIS -----%
+\newcommand<>{\myframed}[1]{\alt#2{\tikz[phd] \node[box] {#1};}{{#1}}}
+\newcommand<>{\myframedAlert}[1]{\alt#2{\tikz[phdB] \node[boxB] {\color{black}#1};}{{#1}}}
 \newcommand<>{\framedmath}[1]{%
 	\alt#2{\tikz[phd] \node[box] {\ensuremath{#1}};}{\ensuremath{#1}}}
 
