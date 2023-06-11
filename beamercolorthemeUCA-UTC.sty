@@ -50,6 +50,7 @@
 \setbeamercolor*{item}{use=structure,fg=structure.fg!50!black}
 \setbeamercolor*{sectionlike}{fg=structure.fg!80!black, bg=white}
 \setbeamercolor*{subsectionlike}{fg=white, bg=structure.fg!90!black}
+\setbeamercolor*{subsubsectionlike}{fg=white, bg=PHDredC!80!white}
 \setbeamercolor*{section}{fg=white}
 \setbeamercolor*{frametitle}{bg=structure!50!black,fg=structure!90!black}
 \setbeamercolor*{part title}{bg=black,fg=black}
@@ -79,11 +80,19 @@
 }
 \renewcommand*{\subsectionpage}{\usebeamertemplate*{subsection page}}
 
-\newcommand{\subsubsectionpage}{\usebeamertemplate{subsubsection page}}
+\defbeamertemplate*{subsubsection page}{mine}[1][]{%
+	\begin{centering}
+		\begin{beamercolorbox}[sep=12pt,center,rounded=true]{subsubsectionlike}
+			\usebeamerfont{subsubsection title}\textbf{\insertsubsubsection}
+			\par
+		\end{beamercolorbox}
+	\end{centering}
+}
+\newcommand{\subsubsectionpage}{\usebeamertemplate*{subsubsection page}}
 
 \AtBeginSection{\frame{\sectionpage}}
 \AtBeginSubsection{\frame{\subsectionpage}}
-%\AtBeginSubsubsection{\frame{\subsubsectionpage}}
+\AtBeginSubsubsection{\frame{\subsubsectionpage}}
 
 \setbeamertemplate{sections/subsections in toc}[square]
 
